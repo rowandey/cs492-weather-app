@@ -84,14 +84,35 @@ class _MyHomePageState extends State<MyHomePage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                ElevatedButton(onPressed: _incrementCounter, child: const Text("+")),
-                ElevatedButton(onPressed: _decrementCounter, child: const Text("-")),
-                ElevatedButton(onPressed: _multiplyCounter, child: const Text("*"))
+                CounterButton(counterFunction: _incrementCounter, symbol: "+"),
+                CounterButton(counterFunction: _decrementCounter, symbol: "-"),
+                CounterButton(counterFunction: _multiplyCounter, symbol: "*2"),
               ],
             )
           ],
         ),
       ),
+    );
+  }
+}
+
+class CounterButton extends StatelessWidget {
+  const CounterButton({
+    super.key,
+    required this.counterFunction,
+    required this.symbol
+  });
+
+  final VoidCallback counterFunction;
+  final String symbol;
+
+  @override
+  Widget build(BuildContext context) {
+    final ButtonStyle style = ElevatedButton.styleFrom(backgroundColor: Colors.tealAccent, shape: StarBorder(points: 8));
+
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: ElevatedButton(style: style, onPressed: counterFunction, child: Text(symbol))
     );
   }
 }
