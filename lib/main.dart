@@ -3,6 +3,7 @@ import './models/forecast.dart';
 import './models/location.dart';
 import './widgets/location.dart';
 import './widgets/forecasts.dart';
+import './widgets/detailed_forecast.dart';
 
 // TODOS:
 // Add input validation for location before calling set location (state vs stateless)
@@ -38,6 +39,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   List<Forecast> _forecasts = [];
+  Forecast? _activeForecast;
   Location? _location;
 
   @override
@@ -54,20 +56,29 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  void _setActiveForecast(Forecast forecast) {
+    setState(() {
+      _activeForecast = forecast;
+    });
+  }
+
   void _setLocation(String locationString) async {
-    Location location = await getLocationFromString(locationString);
+    Location? location = await getLocationFromString(locationString);
     _getForecasts(location);
     setState(() {
       _location = location;
     });
   }
 
-  void _getForecasts(Location location) async {
-    List<Forecast> forecasts =
-        await getForecastsByLocation(location.latitude, location.longitude);
-    setState(() {
-      _forecasts = forecasts;
-    });
+  void _getForecasts(Location? location) async {
+    if (location != null) {
+      List<Forecast> forecasts =
+          await getForecastsByLocation(location.latitude, location.longitude);
+      setState(() {
+        _forecasts = forecasts;
+        _activeForecast = _forecasts[0];
+      });
+    }
   }
 
   @override
@@ -82,12 +93,21 @@ class _MyHomePageState extends State<MyHomePage> {
         width: 500,
         child: Column(
           children: [
-            LocationWidget(location: _location, setLocation: _setLocation, setLocationFromGps: _setLocationFromGps,),
+            LocationWidget(
+              location: _location,
+              setLocation: _setLocation,
+              setLocationFromGps: _setLocationFromGps,
+            ),
             SizedBox(
               width: double.infinity,
               height: 200,
-              child: ForecastsWidget(forecasts: _forecasts),
+              child: ForecastsWidget(forecasts: _forecasts, setActiveForecast: _setActiveForecast),
             ),
+            SizedBox(
+              height: 300,
+              width: double.infinity,
+              child: DetailedForecast(activeForecast: _activeForecast)
+            )
           ],
         ),
       ),
