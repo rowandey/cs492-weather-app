@@ -38,7 +38,7 @@ class DetailedForecast extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                _activeForecast!.name,
+                _activeForecast.name,
                 style: Theme.of(context).textTheme.titleLarge?.copyWith(
                       fontWeight: FontWeight.bold,
                     ),
@@ -49,7 +49,7 @@ class DetailedForecast extends StatelessWidget {
               Expanded(
                 child: SingleChildScrollView(
                   child: Text(
-                    _activeForecast!.detailedForecast,
+                    _activeForecast.detailedForecast,
                     style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                           height: 1.4,
                         ),
