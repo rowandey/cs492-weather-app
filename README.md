@@ -8,6 +8,7 @@
 - break getAssetFromDescription out from models/forecast.dart (done)
 - in detailed_forecast.dart, refactor the divider to use padding rather than sized boxes (done)
 - Add full-test coverage
+- set semanticsLabel to file name
 
 # Mobile App Development Class: Assignment Setup
 
