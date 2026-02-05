@@ -5,7 +5,7 @@
 - Add sub-folders for widgets (done)
 - remove comments in models/location.dart (done)
 - Breakup/improve readability of detailed_forecast.dart
-- break getAssetFromDescription out from models/forecast.dart
+- break getAssetFromDescription out from models/forecast.dart (done)
 - in detailed_forecast.dart, refactor the divider to use padding rather than sized boxes (done)
 - Add full-test coverage
 
