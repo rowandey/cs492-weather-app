@@ -1,7 +1,13 @@
 # Assignment 5-2 Refactoring:
-- List refactoring ideas here (even impractical ones)
-- Try to come up with as many as possible
-- Try to complete as many as possible
+- removing detailed_forecast exclamation point (done)
+- remove main->WeatherAppBar provider passing
+- Fix repetative padding in location.dart (done)
+- Add sub-folders for widgets (done)
+- remove comments in models/location.dart (done)
+- Breakup/improve readability of detailed_forecast.dart
+- break getAssetFromDescription out from models/forecast.dart
+- in detailed_forecast.dart, refactor the divider to use padding rather than sized boxes (done)
+- Add full-test coverage
 
 # Mobile App Development Class: Assignment Setup
 
@@ -121,3 +127,23 @@ It should be safe to stage all changes (unless you made changes to files outside
 9. **Submit a link to your branch**
    
 Verify that the assignment branch was pushed to your remote repository with your changes. Copy a link to your branch and submit it for that assignment on canvas.
+
+
+
+## Stateless/Stateful Widgets
+### main.dart
+MyApp - Stateless
+MyHomePage/_MyHomePageState - Stateful
+### detailed_forecast.dart
+DetailedForecast - Stateless
+### location.dart
+LocationWidget - Stateful
+### forecast.dart
+ForecastWidget - Stateless
+### forecasts.dart
+ForecastsWidget - Stateless
+### forecasts_tile.dart
+ForecastTileWidget - Stateless
+### weather_app_X.dart
+WeatherAppBody - Stateless
+WeatherAppBar - Stateless
