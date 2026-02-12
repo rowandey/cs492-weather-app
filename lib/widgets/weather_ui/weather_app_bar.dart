@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:weatherapp/providers/location_provider.dart';
+import 'package:weatherapp/providers/theme_provider.dart';
 
-class WeatherAppBar extends StatelessWidget implements PreferredSizeWidget {
+class WeatherAppBar extends StatefulWidget implements PreferredSizeWidget {
   const WeatherAppBar({
     super.key,
     required this.title,
@@ -13,17 +14,30 @@ class WeatherAppBar extends StatelessWidget implements PreferredSizeWidget {
   final TabController _tabController;
 
   @override
-  Size get preferredSize => const Size.fromHeight(kToolbarHeight + kTextTabBarHeight);
+  State<WeatherAppBar> createState() => _WeatherAppBarState();
 
   @override
-  Widget build(BuildContext context) {
+  Size get preferredSize =>
+      const Size.fromHeight(kToolbarHeight + kTextTabBarHeight);
+}
 
+class _WeatherAppBarState extends State<WeatherAppBar> {
+  @override
+  Widget build(BuildContext context) {
     final locationProvider = context.watch<LocationProvider>();
-    
+    final themeProvider = context.watch<ThemeProvider>();
+
     return AppBar(
       backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-      title: Text(title),
+      title: Text(widget.title),
       actions: [
+        Switch(
+            value: themeProvider.darkMode,
+            onChanged: (bool value) {
+              setState(() {
+                themeProvider.setDarkMode(value);
+              });
+            }),
         if (locationProvider.location != null)
           Padding(
             padding: const EdgeInsets.only(right: 16.0),
@@ -36,7 +50,7 @@ class WeatherAppBar extends StatelessWidget implements PreferredSizeWidget {
             ),
           ),
       ],
-      bottom: TabBar(controller: _tabController, tabs: const [
+      bottom: TabBar(controller: widget._tabController, tabs: const [
         Tab(icon: Icon(Icons.sunny_snowing)),
         Tab(icon: Icon(Icons.location_pin)),
       ]),

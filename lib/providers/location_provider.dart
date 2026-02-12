@@ -2,10 +2,11 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter/foundation.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:path_provider/path_provider.dart';
 
 import 'package:weatherapp/models/location.dart';
 
-import 'package:path_provider/path_provider.dart';
 
 class LocationProvider extends ChangeNotifier {
   Location? location;
@@ -27,8 +28,17 @@ class LocationProvider extends ChangeNotifier {
       }
     }
 
-    if (location == null && savedLocations.values.isNotEmpty){
-      location = savedLocations.values.first;
+    // if (location == null && savedLocations.values.isNotEmpty){
+    //   location = savedLocations.values.first;
+    // }
+
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+
+    if (location == null && savedLocations.values.isNotEmpty && prefs.getString("zip") != null) {
+      String? zip = prefs.getString("zip");
+      if (zip != null) {
+        location = savedLocations[zip];
+      }
     }
 
     notifyListeners();
@@ -55,6 +65,8 @@ class LocationProvider extends ChangeNotifier {
     String outputString = jsonEncode(outputJson);
 
     await path.writeAsString(outputString);
+
+    saveZipToPrefs();    
   }
 
   void setLocationFromGps() async {
@@ -83,6 +95,17 @@ class LocationProvider extends ChangeNotifier {
 
   void setLocation(Location loc){
     location = loc;
+    saveZipToPrefs();
     notifyListeners();
+  }
+
+  void saveZipToPrefs() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    if (location != null) {
+      prefs.setString("zip", location!.zip);
+    }
+    else {
+      prefs.remove(location!.zip);
+    }
   }
 }
