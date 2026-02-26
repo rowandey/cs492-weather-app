@@ -1,11 +1,13 @@
+
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:http/http.dart' as http;
 import 'package:provider/provider.dart';
 import 'package:weatherapp/models/forecast.dart';
 import 'package:weatherapp/providers/forecast_provider.dart';
+import 'package:http/http.dart';
+
 
 class DetailedForecast extends StatefulWidget {
   const DetailedForecast({super.key});
@@ -48,7 +50,6 @@ class _DetailedForecastState extends State<DetailedForecast> {
     final apiKey = dotenv.env['PEXELS_API_KEY'];
     if (apiKey == null) return null;
 
-    //TODO:
     // Ensure you have your .env file with your api key:
     // PEXELS_API_KEY = {your api key}
     // Look through dart http to see how to create a get request
@@ -57,8 +58,16 @@ class _DetailedForecastState extends State<DetailedForecast> {
     // https://www.pexels.com/api/documentation/#client_libraries
     // create a url with the prompt using Uri.parse
     // https://api.flutter.dev/flutter/dart-core/Uri/parse.html
+    Response response = await get(
+      Uri.parse('https://api.pexels.com/v1/search?query=${prompt}&per_page=1'),
+      headers: {"Authorization": "${apiKey}"},
+    );
 
-    return null;
+    final Map<String, dynamic> data = jsonDecode(response.body);
+
+    final String url = data['photos'][0]['src']['original'];
+
+    return url;
   }
 
   @override
