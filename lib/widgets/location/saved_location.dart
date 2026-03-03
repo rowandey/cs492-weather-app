@@ -57,9 +57,12 @@ class SavedLocation extends StatelessWidget {
                 ),
               ),
               IconButton(
-                icon: const Icon(
-                  Icons.delete,
-                  color: Colors.redAccent,
+                icon: Semantics(
+                  label: "Delete",
+                  child: const Icon(
+                    Icons.delete,
+                    color: Colors.redAccent,
+                  ),
                 ),
                 onPressed: deleteLocation,
               ),

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import 'package:weatherapp/providers/forecast_provider.dart';
 import 'package:weatherapp/providers/location_provider.dart';
 import 'package:weatherapp/providers/theme_provider.dart';
@@ -32,6 +31,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     final themeProvider = context.watch<ThemeProvider>();
     return MaterialApp(
+      // showSemanticsDebugger: true,
       title: 'CS492',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.amber, brightness: Brightness.light),

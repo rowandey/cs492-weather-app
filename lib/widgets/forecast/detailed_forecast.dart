@@ -99,7 +99,6 @@ class _DetailedForecastState extends State<DetailedForecast> {
         clipBehavior: Clip.antiAlias,
         child: Stack(
           children: [
-            // Background image
             if (_imageUrl != null)
               Positioned.fill(
                 child: Image.network(
@@ -107,7 +106,6 @@ class _DetailedForecastState extends State<DetailedForecast> {
                   fit: BoxFit.cover,
                 ),
               ),
-
             Positioned.fill(
               child: Container(
                 color: Colors.black.withValues(alpha: 0.5),
