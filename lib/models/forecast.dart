@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:math' as math;
 import 'package:http/http.dart' as http;
 
 class Forecast {
@@ -126,4 +127,64 @@ String getAssetFromDescription(String description, bool isDaytime) {
   }
 
   return "assets/icons/tornado.svg";
+}
+
+double getAngleFromWindDirection(String direction) {
+  double angle = 0;
+
+    print("Wind Direction: ${direction}");
+
+
+  switch (direction) {
+    case "N":
+      angle = -math.pi / 2;
+      break;
+    case "NNE":
+      angle = -math.pi / 2 + math.pi / 8;
+      break;
+    case "NE":
+      angle = -math.pi / 4;
+      break;
+    case "ENE":
+      angle = -math.pi / 8;
+      break;
+    case "E":
+      angle = 0;
+      break;
+    case "ESE":
+      angle = math.pi / 8;
+      break;
+    case "SE":
+      angle = math.pi / 4;
+      break;
+    case "SSE":
+      angle = math.pi / 2 - math.pi / 8;
+      break;
+    case "S":
+      angle = math.pi / 2;
+      break;
+    case "SSW":
+      angle = math.pi / 2 + math.pi / 8;
+      break;
+    case "SW":
+      angle = math.pi * 3 / 4;
+      break;
+    case "WSW":
+      angle = math.pi - math.pi / 8;
+      break;
+    case "W":
+      angle = math.pi;
+      break;
+    case "WNW":
+      angle = -math.pi + math.pi / 8;
+      break;
+    case "NW":
+      angle = -math.pi * 3 / 4;
+      break;
+    case "NNW":
+      angle = -math.pi / 2 - math.pi / 8;
+      break;
+  }
+
+  return angle;
 }
