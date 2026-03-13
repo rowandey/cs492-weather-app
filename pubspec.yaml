@@ -68,6 +68,7 @@ flutter:
   assets:
     - assets/icons/
     - assets/sql/
+    - assets/wind_direction/
     - .env
   # To add assets to your application, add an assets section, like this:
   # assets:

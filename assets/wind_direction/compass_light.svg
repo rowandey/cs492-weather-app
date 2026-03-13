@@ -23,9 +23,9 @@
      inkscape:pagecheckerboard="false"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="5.6568543"
-     inkscape:cx="115.61196"
-     inkscape:cy="120.91526"
+     inkscape:zoom="2"
+     inkscape:cx="45.93265"
+     inkscape:cy="183.67551"
      inkscape:window-width="2560"
      inkscape:window-height="1371"
      inkscape:window-x="0"
@@ -35,9 +35,26 @@
      units="px"
      width="264px"
      showborder="true"
-     borderlayer="false" />
+     borderlayer="false"
+     inkscape:rotation="1" />
   <defs
-     id="defs2" />
+     id="defs2">
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath35425">
+      <circle
+         style="display:none;fill:#cccccc;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         id="circle35427"
+         cx="34.924999"
+         cy="34.924999"
+         r="17.143375" />
+      <path
+         style="fill:#cccccc;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         class="powerclip"
+         id="lpe_path-effect35429"
+         d="m 10.8745,10.8745 h 48.101 v 48.101 H 10.8745 Z M 52.068375,34.924999 A 17.143375,17.143375 0 0 0 34.924999,17.781624 17.143375,17.143375 0 0 0 17.781624,34.924999 17.143375,17.143375 0 0 0 34.924999,52.068375 17.143375,17.143375 0 0 0 52.068375,34.924999 Z" />
+    </clipPath>
+  </defs>
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
@@ -48,49 +65,53 @@
        cx="34.924999"
        cy="34.924999"
        r="18.918028" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.253218px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 15.8745,34.925 c 38.101,0 38.101,0 38.101,0"
-       id="path954" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.253218px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 34.925,53.9755 c 0,-38.101 0,-38.101 0,-38.101"
-       id="path954-6" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.253218px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="M 48.395738,48.395738 C 21.454262,21.454262 21.454262,21.454262 21.454262,21.454262"
-       id="path1252" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.253218px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="M 48.395738,21.454262 C 21.454262,48.395738 21.454262,48.395738 21.454262,48.395738"
-       id="path1254" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.253218px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="M 27.634689,17.324633 C 42.215311,52.525367 42.215311,52.525367 42.215311,52.525367"
-       id="path1361" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.253218px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="M 42.215311,17.324633 C 27.634689,52.525367 27.634689,52.525367 27.634689,52.525367"
-       id="path1363" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.253218px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="M 52.525367,42.215311 C 17.324633,27.634689 17.324633,27.634689 17.324633,27.634689"
-       id="path1365" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.253218px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="M 52.525367,27.634689 C 17.324633,42.215311 17.324633,42.215311 17.324633,42.215311"
-       id="path1367" />
+    <g
+       id="g35281"
+       clip-path="url(#clipPath35425)">
+      <path
+         style="fill:none;stroke:#000000;stroke-width:0.253218px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 15.8745,34.925 c 38.101,0 38.101,0 38.101,0"
+         id="path954" />
+      <path
+         style="fill:none;stroke:#000000;stroke-width:0.253218px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 34.925,53.9755 c 0,-38.101 0,-38.101 0,-38.101"
+         id="path954-6" />
+      <path
+         style="fill:none;stroke:#000000;stroke-width:0.253218px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="M 48.395738,48.395738 C 21.454262,21.454262 21.454262,21.454262 21.454262,21.454262"
+         id="path1252" />
+      <path
+         style="fill:none;stroke:#000000;stroke-width:0.253218px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="M 48.395738,21.454262 C 21.454262,48.395738 21.454262,48.395738 21.454262,48.395738"
+         id="path1254" />
+      <path
+         style="fill:none;stroke:#000000;stroke-width:0.253218px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="M 27.634689,17.324633 C 42.215311,52.525367 42.215311,52.525367 42.215311,52.525367"
+         id="path1361" />
+      <path
+         style="fill:none;stroke:#000000;stroke-width:0.253218px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="M 42.215311,17.324633 C 27.634689,52.525367 27.634689,52.525367 27.634689,52.525367"
+         id="path1363" />
+      <path
+         style="fill:none;stroke:#000000;stroke-width:0.253218px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="M 52.525367,42.215311 C 17.324633,27.634689 17.324633,27.634689 17.324633,27.634689"
+         id="path1365" />
+      <path
+         style="fill:none;stroke:#000000;stroke-width:0.253218px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="M 52.525367,27.634689 C 17.324633,42.215311 17.324633,42.215311 17.324633,42.215311"
+         id="path1367" />
+    </g>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:4.93889px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
        x="33.127148"
-       y="15.500617"
+       y="15.345082"
        id="text12921"><tspan
          sodipodi:role="line"
          id="tspan12919"
          style="font-size:4.93889px;stroke-width:0.264583"
          x="33.127148"
-         y="15.500617">N</tspan></text>
+         y="15.345082">N</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:4.93889px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
@@ -168,11 +189,5 @@
          style="font-size:4.93889px;stroke-width:0.264583"
          x="13.423671"
          y="21.62405">NW</tspan></text>
-    <circle
-       style="fill:#ffffff;stroke:none;stroke-width:0.264583;fill-opacity:1"
-       id="path34555"
-       cx="34.924999"
-       cy="34.924999"
-       r="17.143375" />
   </g>
 </svg>
