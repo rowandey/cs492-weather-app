@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
     final themeProvider = context.watch<ThemeProvider>();
     return MaterialApp(
       showSemanticsDebugger: false,
-      title: 'CS492',
+      title: 'WeatherWatcher',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
             seedColor: Colors.amber, brightness: Brightness.light),
@@ -44,7 +44,7 @@ class MyApp extends StatelessWidget {
             seedColor: Colors.amber, brightness: Brightness.dark),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'CS492'),
+      home: const MyHomePage(title: 'WeatherWatcher'),
       themeMode: themeProvider.darkMode ? ThemeMode.dark : ThemeMode.light,
     );
   }
