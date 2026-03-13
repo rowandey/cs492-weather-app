@@ -20,12 +20,12 @@ class DetailedForecastText extends StatelessWidget {
             activeForecast.name,
             style: Theme.of(context).textTheme.titleLarge?.copyWith(
                   fontWeight: FontWeight.bold,
-                  color: Colors.white,
+                  color: Theme.of(context).colorScheme.onSurface,
                 ),
           ),
-          const Padding(
-            padding: EdgeInsets.symmetric(vertical: 8.0),
-            child: Divider(color: Colors.white70),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 8.0),
+            child: Divider(color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.4)),
           ),
           Expanded(
             child: SingleChildScrollView(
@@ -33,7 +33,7 @@ class DetailedForecastText extends StatelessWidget {
                 activeForecast.detailedForecast,
                 style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                       height: 1.4,
-                      color: Colors.white,
+                      color: Theme.of(context).colorScheme.onSurface,
                     ),
               ),
             ),

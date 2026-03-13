@@ -16,14 +16,12 @@ class WindInfo extends StatelessWidget {
     final forecastProvider = context.watch<ForecastProvider>();
     final themeProvider = context.watch<ThemeProvider>();
     String windDirection = forecastProvider.activeForecast!.windDirection;
-    String windSpeed = forecastProvider.activeForecast!.windSpeed;
 
     final angle = getAngleFromWindDirection(windDirection);
 
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Text("Wind Direction: $windDirection"),
-        Text("Wind Speed: $windSpeed"),
         WindHeadingIndicator(angle: angle, themeProvider: themeProvider),
       ],
     );

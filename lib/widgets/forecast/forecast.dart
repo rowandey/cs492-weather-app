@@ -17,7 +17,7 @@ class ForecastWidget extends StatelessWidget {
           child: ForecastsRowWidget(),
         ),
         DetailedForecast(),
-        WindInfo()
+        // WindInfo()
       ],
     );
   }

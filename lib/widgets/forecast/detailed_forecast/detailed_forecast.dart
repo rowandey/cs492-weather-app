@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:weatherapp/models/forecast.dart';
-import 'package:weatherapp/models/pexels_image.dart';
 import 'package:weatherapp/providers/forecast_provider.dart';
 import 'package:weatherapp/providers/theme_provider.dart';
 import 'package:weatherapp/widgets/forecast/detailed_forecast/detailed_forecast_text.dart';
+import 'package:weatherapp/widgets/forecast/wind_info.dart';
 
 class DetailedForecast extends StatefulWidget {
   const DetailedForecast({super.key});
@@ -14,10 +14,8 @@ class DetailedForecast extends StatefulWidget {
 }
 
 class _DetailedForecastState extends State<DetailedForecast> {
-  String? _imageUrl;
   Forecast? _lastForecast;
 
-  PexelsImage pexelsImage = PexelsImage();
 
   @override
   void didChangeDependencies() {
@@ -27,22 +25,7 @@ class _DetailedForecastState extends State<DetailedForecast> {
 
     if (activeForecast != null && activeForecast != _lastForecast) {
       _lastForecast = activeForecast;
-      _fetchAndUpdateImage(activeForecast);
     }
-  }
-
-  Future<void> _fetchAndUpdateImage(Forecast forecast) async {
-    String day = forecast.isDaytime ? "Day" : "Night";
-
-    String prompt = "$day ${forecast.shortForecast}".trim();
-
-    final imageUrl = await pexelsImage.getImage(prompt);
-
-    if (!mounted) return;
-
-    setState(() {
-      _imageUrl = imageUrl;
-    });
   }
 
   @override
@@ -64,7 +47,7 @@ class _DetailedForecastState extends State<DetailedForecast> {
 
     return ExcludeSemantics(
       child: SizedBox(
-        height: 300,
+        height: MediaQuery.of(context).size.height * 0.5,
         width: double.infinity,
         child: Card(
           elevation: 3,
@@ -72,28 +55,12 @@ class _DetailedForecastState extends State<DetailedForecast> {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
           ),
+          color: Theme.of(context).colorScheme.surfaceContainerLow,
           clipBehavior: Clip.antiAlias,
-          child: Stack(
+          child: Column(
             children: [
-              // Background image
-              if (_imageUrl != null)
-                Positioned.fill(
-                  child: Image.network(
-                    _imageUrl!,
-                    fit: BoxFit.cover,
-                  ),
-                ),
-
-              Positioned.fill(
-                child: Container(
-                  color: Colors.black.withValues(alpha: 0.5),
-                ),
-              ),
-              DetailedForecastText(activeForecast: activeForecast),
-              if (_imageUrl == null)
-                const Center(
-                  child: CircularProgressIndicator(color: Colors.white),
-                ),
+              Expanded(child: DetailedForecastText(activeForecast: activeForecast)),
+              WindInfo(),
             ],
           ),
         ),

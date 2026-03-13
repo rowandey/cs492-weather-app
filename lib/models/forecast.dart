@@ -132,9 +132,6 @@ String getAssetFromDescription(String description, bool isDaytime) {
 double getAngleFromWindDirection(String direction) {
   double angle = 0;
 
-    print("Wind Direction: ${direction}");
-
-
   switch (direction) {
     case "N":
       angle = -math.pi / 2;
