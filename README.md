@@ -1,7 +1,7 @@
 # WeatherWatcher: A Hands-Off Weather App
 
 ## Overview
-This is a simple but reliable weather app for all of your weather viewing needs. It uses the offical [https://www.weather.gov/documentation/services-web-api](NOAA API) to pull the most recent weather information using a location of your choice, or your devices GPS location. The app will save any locations you look at, using GPS or manual input. It will display the temperature, short forecast for all avaible days, the detailed forecast for any day you select (along with the wind direction!).
+This is a simple but reliable weather app for all of your weather viewing needs. It uses the offical [NOAA API](https://www.weather.gov/documentation/services-web-api) to pull the most recent weather information using a location of your choice, or your devices GPS location. The app will save any locations you look at, using GPS or manual input. It will display the temperature, short forecast for all avaible days, the detailed forecast for any day you select (along with the wind direction!).
 
 ## Build Instructions
 ### Step 0: Install Flutter and Android Studio
@@ -18,7 +18,7 @@ This is a simple but reliable weather app for all of your weather viewing needs.
 2. In the top-right corner, click the **Fork** button to create a copy of the repository under your own GitHub account.  
    - This will create a forked version of the repository that you can modify without affecting the original repository.
 
-### Step 2: Clone Your Fork to Your Local Machine
+### Step 2: Clone Your Fork to Your Machine
 
 1. Navigate to desired project location, like:
    ```bash
@@ -49,4 +49,4 @@ flutter run
 ```
 
 ## Demo Video
-[]()
+[Demo](https://youtube.com/shorts/ft0Lrdie0ms)
